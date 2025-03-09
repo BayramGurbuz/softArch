@@ -15,7 +15,7 @@ body {
   background-color: white;
   border-radius: 25px;
   margin: 20px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
@@ -196,7 +196,7 @@ body {
   background-color: white;
   padding: 20px;
   border-radius: 25px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .calendar {
@@ -204,5 +204,5 @@ body {
   background-color: white;
   border-radius: 25px;
   padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
