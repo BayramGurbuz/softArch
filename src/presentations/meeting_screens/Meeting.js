@@ -1,9 +1,8 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import VideoArea from '../components/VideoArea';
-import ControlBar from '../components/ControlBar';
-import MeetingRightPanel from '../components/MeetingRightPanel';
-import '../ui/styles.css';
+import VideoArea from '../../components/VideoArea';
+import ControlBar from '../../components/ControlBar';
+import MeetingRightPanel from '../../components/MeetingRightPanel';
+import '../../ui/styles.css';
 
 function Meeting() {
   return (

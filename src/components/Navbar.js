@@ -1,22 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../ui/styles.css';
 
 function Navbar() {
+  const [showLogout, setShowLogout] = useState(false);
+
+  const toggleLogout = () => {
+    setShowLogout(!showLogout);
+  };
+
+  const handleLogout = () => {
+    // Çıkış yapma işlemleri
+    console.log('Çıkış yapıldı');
+  };
+
   return (
     <nav className="navbar">
-      <div>
-        {/* Logo */}
-      </div>
-      <div>
-        <a href="/products">Products</a>
-        <a href="/solutions">Solutions</a>
-        <a href="/community">Community</a>
-        <a href="/resources">Resources</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/contact">Contact</a>
-      </div>
-      <div className="profile-icon">
-        {/* Profil ikonu */}
+      <div className="logo">Logo</div>
+      <div className="user-icon" onClick={toggleLogout}>
+        <i className="fas fa-user-circle"></i>
+        {showLogout && (
+          <div className="logout-button" onClick={handleLogout}>
+            Çıkış Yap
+          </div>
+        )}
       </div>
     </nav>
   );
