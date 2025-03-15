@@ -3,18 +3,22 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
+import { signInWithGoogle } from "../services/firebase_auth.js"; 
 import "../AuthForm.css";
 
 function AuthForm({ type }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: API call for authentication
     console.log("Form submitted", formData);
   };
+
   return (
     <div className="auth-form-container">
       <Card className="auth-card">
@@ -52,6 +56,11 @@ function AuthForm({ type }) {
               {type === "login" ? "Sign in" : "Sign up"}
             </Button>
           </form>
+          
+          <Button onClick={signInWithGoogle} className="w-full">
+            Google ile Giriş Yap
+          </Button>
+
           <div className="mt-4 text-center">
             {type === "login" ? (
               <p>
