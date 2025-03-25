@@ -31,7 +31,7 @@ import uuid
 
 cred = credentials.Certificate("config/firebase_config.json")
 firebase_admin.initialize_app(cred, {
-    'storageBucket': 'your-project-id.appspot.com'
+    'storageBucket': "softarch-f3dd7.firebasestorage.app"
 })
 
 db = firestore.client()
