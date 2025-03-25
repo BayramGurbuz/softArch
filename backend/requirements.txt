@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+firebase-admin
+whisper
+transformers
+opencv-python
+deepface
+pydantic
+python-multipart
