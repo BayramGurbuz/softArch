@@ -3,6 +3,8 @@ import Login from "./presentations/auth_screens/Login";
 import Register from "./presentations/auth_screens/Register";
 import Meeting from "./presentations/meeting_screens/Meeting";
 import Home from "./presentations/Home";
+import UploadPage from "./presentations/UploadPage"; 
+import ResultsPage from "./presentations/ResultsPage";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/meeting" element={<Meeting />} />
+        <Route path="/upload" element={<UploadPage />} /> 
+        <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </Router>
   );
