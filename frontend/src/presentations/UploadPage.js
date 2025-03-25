@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from '../components/Navbar';
 import axios from "axios";
 
 export default function UploadPage() {
@@ -30,7 +31,8 @@ export default function UploadPage() {
   };
 
   return (
-    <div>
+    <div className="upload">
+      <Navbar />
       <input type="file" accept="video/*" onChange={(e) => setFile(e.target.files[0])} />
       <button onClick={handleUpload} disabled={!file || loading}>
         {loading ? "Yükleniyor..." : "Upload"}

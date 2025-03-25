@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../ui/styles.css';
 
 function Navbar() {
@@ -16,6 +17,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">Logo</div>
+      <div className="nav-buttons">
+        <Link to="/home" className="nav-button">Toplantılar</Link>
+        <Link to="/upload" className="nav-button">Toplantı Yükle</Link>
+      </div>
+
       <div className="user-icon" onClick={toggleLogout}>
         <i className="fas fa-user-circle"></i>
         {showLogout && (

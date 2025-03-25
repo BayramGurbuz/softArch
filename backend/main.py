@@ -39,7 +39,7 @@ bucket = storage.bucket()
 app = FastAPI()
 
 
-# VİDEO YÜKLEME
+# VİDEO YÜKLEME 
 @app.post("/upload-video/")
 async def upload_video(file: UploadFile = File(...)):
     file_extension = file.filename.split(".")[-1]

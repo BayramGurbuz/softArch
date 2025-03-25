@@ -6,10 +6,9 @@ import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
-cred_path = os.path.join(base_dir, "..", "serviceAccountKey.json")
+cred_path = os.path.join(base_dir, "..", "./config/firebase_config.json")
 
 cred = credentials.Certificate(cred_path)
-initialize_app(cred)
 
 security = HTTPBearer()
 
