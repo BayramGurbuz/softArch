@@ -1,0 +1,12 @@
+node_modules
+# Node.js
+frontend/package-lock.json
+frontend/package.json
+
+# Python cache dosyaları
+__pycache__/
+*.pyc
+
+# Root'taki node package'ları (eğer varsa)
+package-lock.json
+package.json
