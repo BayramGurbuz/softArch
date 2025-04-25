@@ -1,24 +1,17 @@
-from auth.firebase_auth import verify_firebase_token
-from fastapi import FastAPI, HTTPException, Depends
-from fastapi.security import OAuth2PasswordBearer
-from firebase_admin import auth, credentials
-from pydantic import BaseModel
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from routes import upload, result
 
 app = FastAPI()
 
-@app.get("/")
-def home():
-    return {"message": "FastAPI Backend Running!"}
+# CORS ayarları
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-class Token(BaseModel):
-    token: str
-
-# POST metodunu kullanarak token doğrulama
-@app.post("/verify_token/")  # Bu satırda POST methodu kullanılıyor
-async def verify_token(data: Token):
-    try:
-        # Token'ı Firebase ile doğrula
-        decoded_token = auth.verify_id_token(data.token)
-        return {"message": "Token doğrulandı", "user_info": decoded_token}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail="Geçersiz token")
+app.include_router(upload.router)  # Video yükleme işlemi
+app.include_router(result.router)  # Sonuçları döndüren API
