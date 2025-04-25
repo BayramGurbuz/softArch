@@ -1,6 +1,5 @@
 fastapi
 uvicorn
-firebase-admin
 whisper
 transformers
 opencv-python
